@@ -35,14 +35,26 @@ export function RSVPForm({ apiBaseUrl }: RSVPFormProps) {
         }),
       });
 
-      const data = (await response.json()) as { message?: string };
+      const contentType = response.headers.get("content-type") ?? "";
+      let data: { message?: string } | null = null;
+
+      if (contentType.includes("application/json")) {
+        data = (await response.json()) as { message?: string };
+      } else {
+        const rawText = await response.text();
+        throw new Error(
+          rawText.trim()
+            ? `Сервер вернул неожиданный ответ: ${rawText.slice(0, 180)}`
+            : "Сервер вернул пустой или некорректный ответ.",
+        );
+      }
 
       if (!response.ok) {
-        throw new Error(data.message ?? "Жіберу кезінде қате шықты.");
+        throw new Error(data?.message ?? "Жіберу кезінде қате шықты.");
       }
 
       startTransition(() => {
-        setFeedback(data.message ?? "Жауабыңыз қабылданды.");
+        setFeedback(data?.message ?? "Жауабыңыз қабылданды.");
         setFullName("");
         setPhone("");
         setAttendance("yes");
