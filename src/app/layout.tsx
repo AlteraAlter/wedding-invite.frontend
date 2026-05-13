@@ -15,8 +15,8 @@ const bodyFont = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Қыз ұзату | Jaiyq Hall",
-  description: "01.08.2025 күні сағат 19:00-де өтетін қыз ұзату кешіне арналған шақыру парағы.",
+  title: "Заринаның ұзату тойы | Jaiyq Hall",
+  description: "01.08.2026 күні сағат 19:00-де өтетін Заринаның ұзату тойына арналған шақыру парағы.",
 };
 
 export default function RootLayout({

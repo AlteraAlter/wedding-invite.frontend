@@ -165,7 +165,7 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
                 transition={{ delay: 0.26, duration: 0.9 }}
                 className="page-intro-title"
               >
-                {siteContent.brideName} & {siteContent.groomName}
+                {siteContent.brideName}
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
@@ -173,7 +173,7 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
                 transition={{ delay: 0.42, duration: 0.82 }}
                 className="page-intro-subtitle"
               >
-                {siteContent.dateLabel} • {siteContent.timeValue}
+                {siteContent.dateValue} • {siteContent.timeValue}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, scaleX: 0.7 }}
@@ -219,36 +219,44 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
           />
 
           <motion.div variants={reveal} className="relative z-10 text-center">
-            <p className="eyebrow">{siteContent.eyebrow}</p>
-            <h1 className="hero-title mt-4 break-words">{siteContent.title}</h1>
-            <p className="mt-4 text-base leading-8 text-[#614438] sm:text-lg">{siteContent.subtitle}</p>
+            <h1 className="hero-title break-words">{siteContent.title}</h1>
+            <p className="eyebrow mt-4">{siteContent.eyebrow}</p>
+            {siteContent.subtitle ? (
+              <p className="mt-4 text-base leading-8 text-[#614438] sm:text-lg">{siteContent.subtitle}</p>
+            ) : null}
+          </motion.div>
+
+          <motion.div variants={reveal} className="music-inline-row mt-8">
+            <MusicToggle musicUrl={musicUrl} placeholder={siteContent.musicPlaceholder} />
           </motion.div>
 
           <motion.div variants={reveal} className="relative z-10 mx-auto mt-8 h-px w-40 bg-[linear-gradient(90deg,transparent,#9c7b55,transparent)]" />
 
           <motion.div variants={reveal} className="relative z-10 mt-8 text-center">
-            <p className="text-sm font-medium tracking-[0.08em] text-[#8b674d]">Құрметті қонақтар</p>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#5d4235] sm:text-lg">
+            <p className="font-display text-3xl text-[#6f4c3f] sm:text-4xl">{siteContent.intro}</p>
+            <p className="mx-auto mt-6 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
               {siteContent.invitationText}
             </p>
+            {siteContent.quote ? (
+              <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#6b4f44] sm:text-lg">
+                {siteContent.quote}
+              </p>
+            ) : null}
           </motion.div>
 
           <motion.div variants={reveal} className="relative z-10 mt-10 grid gap-6 text-center">
-            <div>
-              <p className="name-title break-words">{siteContent.brideName}</p>
-              <p className="mt-2 text-xl text-[#8f674c]">&</p>
-              <p className="name-title break-words underline decoration-[1.5px] underline-offset-6">
-                {siteContent.groomName}
-              </p>
-            </div>
             {hasFamilyBlock ? (
-              <div>
+              <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-2">
                 <p className="text-sm font-medium tracking-[0.08em] text-[#8b674d]">Той иелері</p>
                 {siteContent.parents ? (
-                  <p className="supporting-title mt-3 break-words">{siteContent.parents}</p>
+                  <p className="supporting-title whitespace-nowrap text-[clamp(1.9rem,6vw,3rem)]">
+                    <span className="underline decoration-[1.5px] underline-offset-6">Армат</span>
+                    {" & "}
+                    <span>Әсем</span>
+                  </p>
                 ) : null}
                 {siteContent.familyName ? (
-                  <p className="mt-2 break-words text-sm tracking-[0.08em] text-[#8b674d]">
+                  <p className="w-full break-words text-sm tracking-[0.08em] text-[#8b674d]">
                     {siteContent.familyName}
                   </p>
                 ) : null}
@@ -291,10 +299,6 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
                 <Countdown targetIso={siteContent.dateIso} />
               </div>
             </div>
-          </motion.div>
-
-          <motion.div variants={reveal} className="music-inline-row">
-            <MusicToggle musicUrl={musicUrl} placeholder={siteContent.musicPlaceholder} />
           </motion.div>
         </motion.div>
       </motion.section>

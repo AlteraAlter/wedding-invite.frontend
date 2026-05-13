@@ -182,7 +182,7 @@ button {
 }
 
 .hero-title {
-  font-size: clamp(4.2rem, 11vw, 7rem);
+  font-size: clamp(3.7rem, 9.6vw, 6.2rem);
   line-height: 0.88;
   font-weight: 700;
   color: #3f241b;
