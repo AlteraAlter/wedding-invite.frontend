@@ -17,8 +17,21 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
       return;
     }
 
-    audioRef.current.volume = 0.45;
+    const audio = audioRef.current;
+
+    audio.volume = 0.45;
     setError(null);
+
+    const tryAutoplay = async () => {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch {
+        setIsPlaying(false);
+      }
+    };
+
+    void tryAutoplay();
   }, [musicUrl]);
 
   const togglePlayback = async () => {
@@ -44,8 +57,8 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
 
   if (!musicUrl) {
     return (
-      <div className="glass-panel luxury-border max-w-full rounded-[1.25rem] px-4 py-3 text-center text-[11px] leading-5 tracking-[0.22em] text-[#9f7b61] uppercase break-words sm:rounded-full sm:text-xs sm:tracking-[0.28em]">
-        {placeholder}
+      <div className="music-inline music-inline-muted">
+        <p className="music-inline-placeholder">{placeholder}</p>
       </div>
     );
   }
@@ -56,23 +69,41 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
         ref={audioRef}
         src={musicUrl}
         loop
+        autoPlay
         preload="auto"
         onEnded={() => setIsPlaying(false)}
+        onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onError={() => {
           setIsPlaying(false);
           setError("Музыка файлы табылмады немесе ашылмады.");
         }}
       />
-      <div className="flex flex-col items-start gap-2">
+      <div className={`music-inline ${isPlaying ? "music-inline-playing" : ""}`}>
+        <div className={`music-visualizer ${isPlaying ? "music-visualizer-active" : ""}`} aria-hidden="true">
+          <span className="music-visualizer-wave" />
+          <span className="music-visualizer-wave" />
+          <span className="music-visualizer-wave" />
+        </div>
         <button
           type="button"
           onClick={togglePlayback}
-          className="glass-panel luxury-border max-w-full rounded-[1.25rem] px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.28em] text-[#9f7b61] transition-transform duration-300 hover:scale-105 sm:rounded-full sm:tracking-[0.35em]"
+          aria-label={isPlaying ? "Әуенді тоқтату" : "Әуенді қосу"}
+          title={isPlaying ? "Әуенді тоқтату" : "Әуенді қосу"}
+          className={`music-button ${isPlaying ? "music-button-playing" : ""}`}
         >
-          {isPlaying ? "Әуенді тоқтату" : "Әуенді қосу"}
+          <span className="music-button-rings" aria-hidden="true" />
+          {isPlaying ? (
+            <svg aria-hidden="true" viewBox="0 0 64 24" className="music-wave-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12C7 12 7 6 12 6C17 6 17 18 22 18C27 18 27 6 32 6C37 6 37 18 42 18C47 18 47 6 52 6C57 6 57 12 62 12" />
+            </svg>
+          ) : (
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="music-button-icon ml-0.5 h-4.5 w-4.5 fill-current">
+              <path d="M8.75 6.4c0-.58.63-.94 1.13-.64l8.2 4.9c.49.3.49 1 0 1.3l-8.2 4.9c-.5.3-1.13-.06-1.13-.64V6.4Z" />
+            </svg>
+          )}
         </button>
-        {error ? <p className="text-xs text-[#8f4d43]">{error}</p> : null}
+        {error ? <p className="music-inline-error">{error}</p> : null}
       </div>
     </>
   );

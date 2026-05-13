@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Manrope, Noto_Serif } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans } from "next/font/google";
 import "./globals.css";
 
-const displayFont = Noto_Serif({
+const displayFont = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
 });
 
-const bodyFont = Manrope({
+const bodyFont = Noto_Sans({
   variable: "--font-body",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700", "800"],

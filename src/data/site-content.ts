@@ -34,6 +34,7 @@ type SiteContent = {
   addressLabel: string;
   addressValue: string;
   mapUrl: string;
+  mapPreviewUrl: string;
   intro: string;
   details: string;
   quote: string;
@@ -75,6 +76,8 @@ export const siteContent: SiteContent = {
   addressLabel: "",
   addressValue: "",
   mapUrl: "https://2gis.kz/uralsk/geo/70000001025184006/51.306599,51.180034,",
+  mapPreviewUrl:
+    "https://static-maps.yandex.ru/1.x/?ll=51.180034,51.306599&z=16&l=map&size=650,350&pt=51.180034,51.306599,pm2rdm",
   intro: "",
   details: "",
   quote: "",

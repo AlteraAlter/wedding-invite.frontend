@@ -1,0 +1,24 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.88" stroke="#7A5A2B" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 164C30 151 42 137 50 121C58 104 60 88 67 72C74 56 89 41 114 27" stroke-width="1.8"/>
+    <path d="M37 186C57 166 74 144 82 121C91 96 90 74 102 55C114 36 137 23 171 18" stroke-width="1.45"/>
+    <path d="M20 130C35 126 44 119 49 108C54 97 55 86 62 76C69 66 82 58 102 54" stroke-width="1.2" opacity="0.82"/>
+    <path d="M49 109C39 104 32 96 27 87C22 78 19 69 16 58" stroke-width="1.05"/>
+    <path d="M82 122C72 115 67 106 66 95C65 84 66 74 72 64" stroke-width="1.05"/>
+    <path d="M103 56C95 48 91 41 91 34C91 27 95 20 102 14" stroke-width="1.05"/>
+    <path d="M115 28C124 35 132 39 140 40C148 41 156 39 165 35" stroke-width="1.05"/>
+    <path d="M69 77C61 72 55 65 51 57C47 49 46 41 48 31" stroke-width="0.95" opacity="0.86"/>
+    <path d="M31 89C25 88 20 85 16 80C12 75 10 70 9 63" stroke-width="0.95" opacity="0.86"/>
+    <path d="M84 121C91 114 100 110 110 108C120 106 130 107 141 111" stroke-width="0.95" opacity="0.84"/>
+    <path d="M43 150C52 145 58 139 61 131C64 123 64 115 68 107" stroke-width="0.95" opacity="0.8"/>
+    <ellipse cx="30" cy="88" rx="5.5" ry="2.8" transform="rotate(-137 30 88)" fill="#7A5A2B" stroke="none"/>
+    <ellipse cx="49" cy="108" rx="6.2" ry="3" transform="rotate(-148 49 108)" fill="#7A5A2B" stroke="none"/>
+    <ellipse cx="69" cy="76" rx="5.2" ry="2.6" transform="rotate(-142 69 76)" fill="#7A5A2B" stroke="none"/>
+    <ellipse cx="83" cy="122" rx="5.8" ry="2.7" transform="rotate(-24 83 122)" fill="#7A5A2B" stroke="none"/>
+    <ellipse cx="102" cy="55" rx="5.2" ry="2.5" transform="rotate(-126 102 55)" fill="#7A5A2B" stroke="none"/>
+    <ellipse cx="116" cy="28" rx="5.8" ry="2.8" transform="rotate(18 116 28)" fill="#7A5A2B" stroke="none"/>
+    <ellipse cx="142" cy="39" rx="6.5" ry="3" transform="rotate(-6 142 39)" fill="#7A5A2B" stroke="none"/>
+    <circle cx="15" cy="165" r="2.4" fill="#7A5A2B" stroke="none"/>
+    <circle cx="38" cy="186" r="2.2" fill="#7A5A2B" stroke="none"/>
+  </g>
+</svg>

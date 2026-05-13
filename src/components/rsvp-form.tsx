@@ -69,7 +69,7 @@ export function RSVPForm({ apiBaseUrl }: RSVPFormProps) {
   };
 
   return (
-    <form onSubmit={submitForm} className="glass-panel rounded-[2rem] p-5 sm:p-7">
+    <form onSubmit={submitForm} className="glass-panel glass-panel-rsvp rounded-[2rem] p-5 sm:p-7">
       <div className="grid gap-4">
         <label className="grid gap-2 text-sm text-[#8a6c58]">
           <span>Аты-жөніңіз</span>
@@ -98,10 +98,10 @@ export function RSVPForm({ apiBaseUrl }: RSVPFormProps) {
             <button
               type="button"
               onClick={() => setAttendance("yes")}
-              className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${
+              className={`rounded-2xl px-4 py-3 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 ${
                 attendance === "yes"
-                  ? "bg-[#2f5a51] text-white"
-                  : "luxury-border bg-white/80 text-[#6d4b39]"
+                  ? "border border-[#8f5b43] bg-[linear-gradient(135deg,#a37053_0%,#85523d_52%,#6a3f30_100%)] text-[#fffaf4] shadow-[0_14px_30px_rgba(122,75,52,0.22)] hover:shadow-[0_18px_36px_rgba(122,75,52,0.28)]"
+                  : "border border-[rgba(160,120,95,0.24)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(247,238,230,0.98))] text-[#6d4b39] shadow-[0_10px_22px_rgba(132,101,80,0.08)] hover:shadow-[0_14px_28px_rgba(132,101,80,0.12)]"
               }`}
             >
               Келемін
@@ -109,10 +109,10 @@ export function RSVPForm({ apiBaseUrl }: RSVPFormProps) {
             <button
               type="button"
               onClick={() => setAttendance("no")}
-              className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${
+              className={`rounded-2xl px-4 py-3 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 ${
                 attendance === "no"
-                  ? "bg-[#7a4b34] text-white"
-                  : "luxury-border bg-white/80 text-[#6d4b39]"
+                  ? "border border-[#8f5b43] bg-[linear-gradient(135deg,#a37053_0%,#85523d_52%,#6a3f30_100%)] text-[#fffaf4] shadow-[0_14px_30px_rgba(122,75,52,0.22)] hover:shadow-[0_18px_36px_rgba(122,75,52,0.28)]"
+                  : "border border-[rgba(160,120,95,0.24)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(247,238,230,0.98))] text-[#6d4b39] shadow-[0_10px_22px_rgba(132,101,80,0.08)] hover:shadow-[0_14px_28px_rgba(132,101,80,0.12)]"
               }`}
             >
               Келе алмаймын
@@ -134,7 +134,7 @@ export function RSVPForm({ apiBaseUrl }: RSVPFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-full bg-[linear-gradient(135deg,#3d6f65,#2f5a51,#7a4b34)] px-6 py-4 text-sm font-extrabold uppercase tracking-[0.28em] text-white transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-70"
+          className="rounded-full border border-[#8f5b43] bg-[linear-gradient(135deg,#a37053_0%,#85523d_52%,#6a3f30_100%)] px-6 py-4 text-sm font-extrabold uppercase tracking-[0.28em] text-[#fffaf4] shadow-[0_14px_32px_rgba(122,75,52,0.24)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(122,75,52,0.28)] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isSubmitting ? "Жіберілуде..." : "Жауапты жіберу"}
         </button>
