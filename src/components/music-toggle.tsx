@@ -7,8 +7,11 @@ type MusicToggleProps = {
   placeholder: string;
 };
 
+const firstScrollMusicKey = "wedding-invitation-music-first-scroll";
+
 export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const hasUnlockedFromInteractionRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -21,17 +24,42 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
 
     audio.volume = 0.45;
     setError(null);
+  }, [musicUrl]);
 
-    const tryAutoplay = async () => {
+  useEffect(() => {
+    if (!musicUrl || !audioRef.current) {
+      return;
+    }
+
+    if (window.sessionStorage.getItem(firstScrollMusicKey) === "true") {
+      hasUnlockedFromInteractionRef.current = true;
+      return;
+    }
+
+    const audio = audioRef.current;
+
+    const unlockFromScroll = async () => {
+      if (hasUnlockedFromInteractionRef.current) {
+        return;
+      }
+
+      hasUnlockedFromInteractionRef.current = true;
+      window.sessionStorage.setItem(firstScrollMusicKey, "true");
+
       try {
         await audio.play();
-        setIsPlaying(true);
+        setError(null);
       } catch {
         setIsPlaying(false);
+        setError("Әуенді ойнату мүмкін болмады.");
       }
     };
 
-    void tryAutoplay();
+    window.addEventListener("scroll", unlockFromScroll, { once: true, passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", unlockFromScroll);
+    };
   }, [musicUrl]);
 
   const togglePlayback = async () => {
@@ -47,6 +75,7 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
 
     try {
       await audioRef.current.play();
+      hasUnlockedFromInteractionRef.current = true;
       setIsPlaying(true);
       setError(null);
     } catch {
@@ -69,7 +98,6 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
         ref={audioRef}
         src={musicUrl}
         loop
-        autoPlay
         preload="auto"
         onEnded={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}

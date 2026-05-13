@@ -77,8 +77,8 @@ function Countdown({ targetIso }: { targetIso: string }) {
   return (
     <div className="countdown-shell">
       {[
-        { label: "дней", value: parts.days },
-        { label: "часов", value: parts.hours },
+        { label: "күн", value: parts.days },
+        { label: "сағат", value: parts.hours },
         { label: "минут", value: parts.minutes },
         { label: "секунд", value: parts.seconds },
       ].map((item, index, items) => (
