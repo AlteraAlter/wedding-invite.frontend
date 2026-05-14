@@ -18,6 +18,7 @@ type SiteContent = {
   title: string;
   subtitle: string;
   brideName: string;
+  brideNameGenitive: string;
   groomName: string;
   familyName: string;
   parents: string;
@@ -56,13 +57,14 @@ type SiteContent = {
 };
 
 export const siteContent: SiteContent = {
-  eyebrow: "ҚЫЗ ҰЗАТУ",
+  eyebrow: "Қыз ұзату",
   title: "Зарина",
   subtitle: "",
   brideName: "Зарина",
+  brideNameGenitive: "",
   groomName: "",
   familyName: "",
-  parents: "Армат & Әсем",
+  parents: "Армат & Асем",
   dateLabel: "Күні",
   dateValue: "01.08.2026",
   dateDay: "01",
@@ -78,11 +80,11 @@ export const siteContent: SiteContent = {
   mapUrl: "https://2gis.kz/uralsk/geo/70000001025184006/51.306599,51.180034,",
   mapPreviewUrl:
     "https://static-maps.yandex.ru/1.x/?ll=51.180034,51.306599&z=16&l=map&size=650,350&pt=51.180034,51.306599,pm2rdm",
-  intro: "Құрметті!",
-  details: "",
-  quote: "Зарина – қызымыздың ұядан ұшқан күні.",
-  invitationText:
-    "Ағайын-туыс, Бауырлар, Құда-Жекжат, Нағашы-Жиен, Бөлелер,\nДос-Жаран, Әріптестер, Көршілер!\n\nСіздерді аяулы қызымыз Заринаның Қыз Ұзату тойына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!",
+  intro:
+    "Құрметті Ағайын-туыс, Бауырлар, Құда-жекжат, Нағашы-жиен, Бөлелер, Дос-жаран, Әріптестер, Көршілер!",
+  details: "Сіздерді аяулы қызымыздың",
+  quote: "",
+  invitationText: "ұзату тойына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.",
   countdownTitle: "Салтанат басталуына дейін",
   storyTitle: "",
   storyCards: [],

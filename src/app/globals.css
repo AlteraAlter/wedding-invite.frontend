@@ -171,6 +171,22 @@ button {
   font-family: var(--font-display), serif;
 }
 
+.font-script {
+  font-family: var(--font-script), cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-synthesis: none;
+}
+
+.hero-title.font-script,
+.section-title.font-script,
+.name-title.font-script,
+.supporting-title.font-script {
+  font-family: var(--font-script), cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
 .hero-title,
 .section-title,
 .name-title,

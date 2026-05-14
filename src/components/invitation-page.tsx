@@ -219,7 +219,7 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
           />
 
           <motion.div variants={reveal} className="relative z-10 text-center">
-            <h1 className="hero-title break-words">{siteContent.title}</h1>
+            <h1 className="hero-title font-script break-words text-[clamp(3rem,8.2vw,5.2rem)]">{siteContent.title}</h1>
             <p className="eyebrow mt-4">{siteContent.eyebrow}</p>
             {siteContent.subtitle ? (
               <p className="mt-4 text-base leading-8 text-[#614438] sm:text-lg">{siteContent.subtitle}</p>
@@ -232,9 +232,23 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
 
           <motion.div variants={reveal} className="relative z-10 mx-auto mt-8 h-px w-40 bg-[linear-gradient(90deg,transparent,#9c7b55,transparent)]" />
 
-          <motion.div variants={reveal} className="relative z-10 mt-8 text-center">
-            <p className="font-display text-3xl text-[#6f4c3f] sm:text-4xl">{siteContent.intro}</p>
-            <p className="mx-auto mt-6 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
+          <motion.div variants={reveal} className="relative z-10 mt-2 text-center">
+            {siteContent.intro ? (
+              <p className="mx-auto max-w-3xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
+                {siteContent.intro}
+              </p>
+            ) : null}
+            {siteContent.details ? (
+              <p className="mx-auto mt-2 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
+                {siteContent.details}
+              </p>
+            ) : null}
+            {siteContent.brideNameGenitive ? (
+              <p className="font-script mx-auto mt-1 max-w-2xl text-[1.45rem] leading-8 text-[#6b4f44] sm:text-[1.7rem]">
+                {siteContent.brideNameGenitive}
+              </p>
+            ) : null}
+            <p className="mx-auto mt-3 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
               {siteContent.invitationText}
             </p>
             {siteContent.quote ? (
@@ -247,12 +261,11 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
           <motion.div variants={reveal} className="relative z-10 mt-10 grid gap-6 text-center">
             {hasFamilyBlock ? (
               <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-2">
-                <p className="text-sm font-medium tracking-[0.08em] text-[#8b674d]">Той иелері</p>
+                <p className="text-sm font-medium tracking-[0.08em] text-[#8b674d]">Той иелері:</p>
                 {siteContent.parents ? (
                   <p className="supporting-title whitespace-nowrap text-[clamp(1.9rem,6vw,3rem)]">
                     <span className="underline decoration-[1.5px] underline-offset-6">Армат</span>
-                    {" & "}
-                    <span>Әсем</span>
+                    {" & Асем"}
                   </p>
                 ) : null}
                 {siteContent.familyName ? (

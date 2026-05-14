@@ -126,7 +126,7 @@ export function MusicToggle({ musicUrl, placeholder }: MusicToggleProps) {
               <path d="M2 12C7 12 7 6 12 6C17 6 17 18 22 18C27 18 27 6 32 6C37 6 37 18 42 18C47 18 47 6 52 6C57 6 57 12 62 12" />
             </svg>
           ) : (
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="music-button-icon ml-0.5 h-4.5 w-4.5 fill-current">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="music-button-icon h-4.5 w-4.5 fill-current">
               <path d="M8.75 6.4c0-.58.63-.94 1.13-.64l8.2 4.9c.49.3.49 1 0 1.3l-8.2 4.9c-.5.3-1.13-.06-1.13-.64V6.4Z" />
             </svg>
           )}

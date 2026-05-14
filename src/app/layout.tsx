@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Noto_Sans } from "next/font/google";
+import { Cormorant_Garamond, Great_Vibes, Noto_Sans } from "next/font/google";
 import "./globals.css";
 
 const displayFont = Cormorant_Garamond({
@@ -12,6 +12,12 @@ const bodyFont = Noto_Sans({
   variable: "--font-body",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
+});
+
+const scriptFont = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin", "cyrillic"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="kk"
-      className={`${displayFont.variable} ${bodyFont.variable} h-full scroll-smooth antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${scriptFont.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
