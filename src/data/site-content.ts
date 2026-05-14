@@ -61,7 +61,7 @@ export const siteContent: SiteContent = {
   title: "Зарина",
   subtitle: "",
   brideName: "Зарина",
-  brideNameGenitive: "",
+  brideNameGenitive: "Заринаның",
   groomName: "",
   familyName: "",
   parents: "Армат & Асем",
@@ -82,7 +82,7 @@ export const siteContent: SiteContent = {
     "https://static-maps.yandex.ru/1.x/?ll=51.180034,51.306599&z=16&l=map&size=650,350&pt=51.180034,51.306599,pm2rdm",
   intro:
     "Құрметті Ағайын-туыс, Бауырлар, Құда-жекжат, Нағашы-жиен, Бөлелер, Дос-жаран, Әріптестер, Көршілер!",
-  details: "Сіздерді аяулы қызымыздың",
+  details: "Сіз(дер)ді аяулы қызымыздың",
   quote: "",
   invitationText: "ұзату тойына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.",
   countdownTitle: "Салтанат басталуына дейін",
