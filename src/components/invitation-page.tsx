@@ -244,11 +244,11 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
               </p>
             ) : null}
             {siteContent.brideNameGenitive ? (
-              <p className="font-script mx-auto mt-1 max-w-2xl text-[1.45rem] leading-8 text-[#6b4f44] sm:text-[1.7rem]">
+              <p className="mx-auto mt-2 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
                 {siteContent.brideNameGenitive}
               </p>
             ) : null}
-            <p className="mx-auto mt-3 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
+            <p className="mx-auto mt-1 max-w-2xl whitespace-pre-line text-base leading-8 text-[#5d4235] sm:text-lg">
               {siteContent.invitationText}
             </p>
             {siteContent.quote ? (
@@ -355,6 +355,7 @@ export function InvitationPage({ apiBaseUrl, musicUrl }: InvitationPageProps) {
               <h2 className="section-title mt-3 break-words">{siteContent.venueValue}</h2>
               {hasAddress ? <p className="mt-4 break-words text-base leading-8 text-[#6a4b3e]">{siteContent.addressValue}</p> : null}
               <p className="mt-3 text-sm text-[#87624d]">{siteContent.mapText}</p>
+              <p className="mt-3 text-sm text-[#87624d]">Мекен жайы: Орал қаласы, Жәңгір хан көшесі 64/1, Jaiyq Hall мейрамханасы</p>
             </div>
             <div className="mt-8 flex justify-center">
               <a
